@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>dashboard - CodeCraft Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav class="nav">
+        <div class="nav-left">
+            <div class="logo">CodeCraft Studio</div>
+            <button class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+        
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li class="mobile-signin">
+                <a href="#" class="sign-in-btn-mobile logout-mobile">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+        </ul>
+        
+        <div class="nav-right">
+            <span class="user-greeting">Welcome back, <span class="user-name">Guest</span></span>
+            <a href="#" class="sign-in-btn logout-btn">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Welcome Section -->
+    <section class="section hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Welcome to Your Dashboard</h1>
+                <p class="user-email-display" id="user-email-display">You're logged in! This is your personal area to manage projects, view messages, and more.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="section">
+        <div class="container">
+            <h2 class="line-draw fade-in">Quick Actions</h2>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <i class="fas fa-project-diagram project-icon"></i>
+                    <h3>My Projects</h3>
+                    <p>Review and update your portfolio work</p>
+                    <a href="index.html#projects" class="cta-btn">View Projects</a>
+                </div>
+                <div class="project-card fade-in">
+                    <i class="fas fa-envelope project-icon"></i>
+                    <h3>Messages</h3>
+                    <p>See your conversation with Emmanuel</p>
+                    <a href="#messages-section" class="cta-btn">Go to Messages</a>
+                </div>
+                <div class="project-card fade-in">
+                    <i class="fas fa-cog project-icon"></i>
+                    <h3>Account Settings</h3>
+                    <p>Update email, password, preferences</p>
+                    <a href="#" class="cta-btn disabled">Coming Soon</a>
+                </div>
+                <div class="project-card fade-in">
+                    <i class="fas fa-chart-line project-icon"></i>
+                    <h3>Analytics</h3>
+                    <p>Track views and engagement</p>
+                    <a href="#" class="cta-btn disabled">Coming Soon</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MESSAGES SECTION -->
+    <section id="messages-section" class="section alt-bg">
+        <div class="container">
+            <h2 class="line-draw">Your Messages</h2>
+            <p class="section-subtitle fade-in">Chat with Emmanuel about your projects</p>
+            
+            <!-- Messages Container -->
+            <div id="messages-container" class="messages-container">
+                <!-- Messages will load here via JavaScript -->
+            </div>
+            
+            <!-- Credentials Display -->
+            <div class="credentials-container" id="credentials-container">
+                <h3 class="credentials-title">Your Login Credentials</h3>
+                <div class="credential-row">
+                    <div class="credential-label">Email:</div>
+                    <div class="credential-value-wrapper">
+                        <div class="credential-value" id="email-display">Loading...</div>
+                        <button class="copy-btn" onclick="copyToClipboard('email-display')">Copy</button>
+                    </div>
+                </div>
+                <div class="credential-row">
+                    <div class="credential-label">Password:</div>
+                    <div class="credential-value-wrapper">
+                        <div class="credential-value" id="password-display">dashboard123</div>
+                        <button class="copy-btn" onclick="copyToClipboard('password-display')">Copy</button>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; color: #94a3b8; font-size: 0.9rem; text-align: center;">
+                    <i class="fas fa-info-circle"></i> Copy these credentials carefully. Do not share.
+                </p>
+            </div>
+            
+            <!-- New Message Form -->
+            <div class="new-message-box">
+                <h3><i class="fas fa-paper-plane"></i> New Message</h3>
+                
+                <!-- DASHBOARD MESSAGE FORM - UPDATED FOR FORMSPREE -->
+                <form id="dashboard-message-form" class="dashboard-form"
+                      action="https://formspree.io/f/xreebqno"
+                      method="POST">
+                    
+                    <!-- CRITICAL: These hidden fields make Formspree work -->
+                    <input type="hidden" name="_subject" value="Dashboard Message">
+                    <input type="hidden" name="_replyto" id="dashboard-replyto">
+                    
+                    <!-- Identify this as coming from dashboard -->
+                    <input type="hidden" name="source" value="dashboard">
+                    <input type="hidden" name="form_type" value="dashboard_reply">
+                    
+                    <!-- Include user info -->
+                    <input type="hidden" name="client_name" id="dashboard-client-name">
+                    <input type="hidden" name="client_email" id="dashboard-client-email">
+                    
+                    <!-- Visible form fields -->
+                    <input type="text" name="subject" id="new-subject" placeholder="Subject" required>
+                    <textarea name="message" id="new-message" placeholder="Type your message..." rows="4" required></textarea>
+                    
+                    <!-- Honeypot for spam (Formspree requirement) -->
+                    <input type="text" name="_gotcha" style="display:none">
+                    
+                    <button type="submit" class="send-message-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Home -->
+    <section class="section">
+        <div class="container text-center">
+            <a href="index.html" class="cta-btn fade-in">Back to Home</a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
