@@ -8,29 +8,53 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+    <body>
     <!-- Theme Toggle -->
     <button class="theme-toggle" id="theme-toggle">
         <i class="fas fa-moon"></i>
     </button>
 
-    <!-- Nav -->
+    <!-- Updated Nav with Contact Icons + Sign In -->
     <nav class="nav">
-    <div class="logo">CodeCraft Studio</div>
+        <div class="logo">CodeCraft Studio</div>
 
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-    </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-    <ul class="nav-links" id="nav-menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#portfolio">portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#" id="login-link">Sign In</a></li>
-    </ul>
-</nav>
+        <!-- Main menu links -->
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Right side: Contact icons + Sign In -->
+        <div class="nav-right">
+            <!-- Quick contact icons -->
+            <div class="nav-contact">
+                <a href="tel:+2349061163520" class="contact-icon" title="Call me" aria-label="Phone number">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="mailto:anyanwuemmanuel367@gmail.com" class="contact-icon" title="Email me" aria-label="Email address">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://github.com/AnyanwuCEmmanuel" target="_blank" class="contact-icon" title="GitHub profile" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+
+            <!-- Sign In link (your existing modal trigger) -->
+            <a href="#" id="login-link" class="sign-in-btn">
+                Sign In
+            </a>
+        </div>
+    </nav>
 
     <!-- Hero -->
     <section id="home" class="hero">
@@ -47,7 +71,7 @@
             <h2 class="line-draw">About Me</h2>
             <div class="about-grid">
                 <div class="profile-pic fade-in">
-                    <img src="wallpaper.jpg" alt="Anyanwu Chijioke Emmanuel" onerror="this.src='https://via.placeholder.com/320?text=Your+Photo'">
+                    <img src="images/wallpaper.jpg" alt="Anyanwu Chijioke Emmanuel" onerror="this.src='https://via.placeholder.com/320?text=Your+Photo'">
                 </div>
                 <div class="about-text fade-in">
                     <p>Hi, I'm Anyanwu Chijioke Emmanuel, a passionate frontend developer from Nigeria.</p>
@@ -129,61 +153,57 @@
             </div>
         </div>
     </section>
+
     <section id="portfolio" class="section">
-    <div class="container">
-        <h2 class="line-draw">Portfolio</h2>
-        <div class="projects-grid">
-            <!-- your 3 project cards here -->
-        </div>
-
-        <!-- NEW: Add this right after .projects-grid (still inside .container) -->
-        <div class="project-card fade-in portfolio-cta-card" style="margin-top: 60px;">
-            <i class="fas fa-briefcase project-icon" style="font-size: 4rem; margin-bottom: 25px;"></i>
-            <h3>Explore My Complete Portfolio</h3>
-            <p>Check out more projects, detailed case studies, skills breakdown, and everything I've built so far — all in one beautiful place.</p>
-            <a href="https://my-portfolio-kappa-inky-93.vercel.app/" target="_blank" class="project-btn github-btn" style="background: #2dd4bf; color: #0f172a;">
-                <i class="fas fa-external-link-alt"></i> Open Full Portfolio
-            </a>
-        </div>
-    </div>
-</section>
-
-    <!-- Contact -->
-    <section id="contact" class="section alt-bg">
         <div class="container">
-            <h2 class="line-draw">Get In Touch</h2>
-            <form id="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" rows="6" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-
-            <div class="contact-info">
-                <p>Or reach me directly:</p>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:anyanwuemmanuel367@gmail.com">anyanwuemmanuel367@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:+2348123456789">09061163520</a>
-                </div>
+            <h2 class="line-draw">Portfolio</h2>
+            <div class="projects-grid">
+                <!-- your 3 project cards here -->
             </div>
 
-            <div class="social-bottom">
-                <p>Connect with me</p>
-                <div class="social-icons">
-                    <a href="https://github.com/AnyanwuCEmmanuel" target="_blank"><i class="fab fa-github"></i></a>
-                </div>
+            <div class="project-card fade-in portfolio-cta-card" style="margin-top: 60px;">
+                <i class="fas fa-briefcase project-icon" style="font-size: 4rem; margin-bottom: 25px;"></i>
+                <h3>Explore My Complete Portfolio</h3>
+                <p>Check out more projects, detailed case studies, skills breakdown, and everything I've built so far — all in one beautiful place.</p>
+                <a href="https://my-portfolio-kappa-inky-93.vercel.app/" target="_blank" class="project-btn github-btn" style="background: #2dd4bf; color: #0f172a;">
+                    <i class="fas fa-external-link-alt"></i> Open Full Portfolio
+                </a>
             </div>
         </div>
     </section>
 
+   <!-- Contact Section -->
+<section id="contact" class="section alt-bg">
+    <div class="container">
+        <h2 class="line-draw">Get In Touch</h2>
+        
+        <!-- Message Status -->
+        <div id="message-status" class="message-status"></div>
+        
+        <form id="contact-form" class="contact-form"
+      action="https://formspree.io/f/xreebqno"
+      method="POST">
+
+    <input type="text" name="name" id="client-name" placeholder="Your Name" required>
+    <input type="email" name="email" id="client-email" placeholder="Your Email" required>
+    <input type="hidden" name="_subject" value="New contact form message from website">
+    <textarea name="message" id="client-message" placeholder="Your Message" rows="6" required></textarea>
+    <button type="submit">Send Message</button>
+</form>
+        <!-- Info box -->
+        <div class="info-box">
+            <p><strong>💡 How messaging works:</strong></p>
+            <p>1. Send message → Get dashboard access</p>
+            <p>2. I'll reply in your dashboard</p>
+            <p>3. Continue conversation there!</p>
+        </div>
+    </div>
+</section>
+
     <!-- Login Modal -->
     <div class="modal" id="login-modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close">×</span>
             <h2>Sign In</h2>
             <form id="login-form">
                 <input type="email" placeholder="Email" required>
@@ -193,8 +213,50 @@
             <p>No account? <a href="#" id="signup-link">Sign Up</a></p>
         </div>
     </div>
+   <!-- Beautiful Credentials Popup (shows instead of ugly alert) -->
+<div id="credentials-popup" class="credentials-popup">
+    <div class="popup-content">
+        <span class="popup-close" onclick="closeCredentialsPopup()">×</span>
+        
+        <h2>Message Sent! 🎉</h2>
+        <p style="text-align: center; margin-bottom: 1.5rem;">
+            Your temporary login details are ready
+        </p>
+        
+        <div class="popup-credentials">
+            <div class="credential-row">
+                <span class="credential-label">Email:</span>
+                <code id="popup-email-display" class="credential-value"></code>
+                <button class="copy-btn" onclick="copyToClipboard('popup-email-display')">Copy</button>
+            </div>
+            
+            <div class="credential-row">
+                <span class="credential-label">Password:</span>
+                <code id="popup-password-display" class="credential-value">dashboard123</code>
+                <button class="copy-btn" onclick="copyToClipboard('popup-password-display')">Copy</button>
+            </div>
+        </div>
+
+        <div class="popup-instructions">
+            <strong>Next steps:</strong>
+            <ol>
+                <li>Click <strong>Sign In</strong> at the top right</li>
+                <li>Use these exact credentials</li>
+                <li>Check your messages in the dashboard</li>
+            </ol>
+        </div>
+
+        <div class="popup-actions">
+            <button class="btn-close" onclick="closeCredentialsPopup()">Close</button>
+            <button class="btn-dashboard" onclick="goToDashboard()">Go to Dashboard</button>
+        </div>
+    </div>
+</div> 
 
     <script src="script.js"></script>
 </body>
-
 </html>
+
+</body>
+</html>
+
